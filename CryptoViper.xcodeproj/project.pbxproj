@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		A365CB702C8A6A980082F1BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365CB6F2C8A6A980082F1BD /* AppDelegate.swift */; };
 		A365CB722C8A6A980082F1BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365CB712C8A6A980082F1BD /* SceneDelegate.swift */; };
-		A365CB742C8A6A980082F1BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365CB732C8A6A980082F1BD /* ViewController.swift */; };
-		A365CB772C8A6A980082F1BD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A365CB762C8A6A980082F1BD /* Base */; };
 		A365CB792C8A6A990082F1BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A365CB782C8A6A990082F1BD /* Assets.xcassets */; };
 		A365CB7C2C8A6A990082F1BD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A365CB7B2C8A6A990082F1BD /* Base */; };
+		A365CB852C8A6B3C0082F1BD /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365CB842C8A6B3C0082F1BD /* View.swift */; };
+		A365CB872C8A6B4E0082F1BD /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365CB862C8A6B4E0082F1BD /* Interactor.swift */; };
+		A365CB892C8A6B5B0082F1BD /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365CB882C8A6B5B0082F1BD /* Presenter.swift */; };
+		A365CB8B2C8A6B650082F1BD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365CB8A2C8A6B650082F1BD /* Router.swift */; };
+		A365CB8D2C8A6B820082F1BD /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365CB8C2C8A6B820082F1BD /* Entity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A365CB6C2C8A6A980082F1BD /* CryptoViper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoViper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A365CB6F2C8A6A980082F1BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A365CB712C8A6A980082F1BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A365CB732C8A6A980082F1BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A365CB762C8A6A980082F1BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A365CB782C8A6A990082F1BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A365CB7B2C8A6A990082F1BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A365CB7D2C8A6A990082F1BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A365CB842C8A6B3C0082F1BD /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		A365CB862C8A6B4E0082F1BD /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		A365CB882C8A6B5B0082F1BD /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		A365CB8A2C8A6B650082F1BD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A365CB8C2C8A6B820082F1BD /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +64,14 @@
 			children = (
 				A365CB6F2C8A6A980082F1BD /* AppDelegate.swift */,
 				A365CB712C8A6A980082F1BD /* SceneDelegate.swift */,
-				A365CB732C8A6A980082F1BD /* ViewController.swift */,
-				A365CB752C8A6A980082F1BD /* Main.storyboard */,
 				A365CB782C8A6A990082F1BD /* Assets.xcassets */,
 				A365CB7A2C8A6A990082F1BD /* LaunchScreen.storyboard */,
 				A365CB7D2C8A6A990082F1BD /* Info.plist */,
+				A365CB842C8A6B3C0082F1BD /* View.swift */,
+				A365CB862C8A6B4E0082F1BD /* Interactor.swift */,
+				A365CB882C8A6B5B0082F1BD /* Presenter.swift */,
+				A365CB8C2C8A6B820082F1BD /* Entity.swift */,
+				A365CB8A2C8A6B650082F1BD /* Router.swift */,
 			);
 			path = CryptoViper;
 			sourceTree = "<group>";
@@ -127,7 +136,6 @@
 			files = (
 				A365CB792C8A6A990082F1BD /* Assets.xcassets in Resources */,
 				A365CB7C2C8A6A990082F1BD /* Base in Resources */,
-				A365CB772C8A6A980082F1BD /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A365CB742C8A6A980082F1BD /* ViewController.swift in Sources */,
+				A365CB892C8A6B5B0082F1BD /* Presenter.swift in Sources */,
+				A365CB852C8A6B3C0082F1BD /* View.swift in Sources */,
+				A365CB8B2C8A6B650082F1BD /* Router.swift in Sources */,
+				A365CB8D2C8A6B820082F1BD /* Entity.swift in Sources */,
+				A365CB872C8A6B4E0082F1BD /* Interactor.swift in Sources */,
 				A365CB702C8A6A980082F1BD /* AppDelegate.swift in Sources */,
 				A365CB722C8A6A980082F1BD /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +159,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A365CB752C8A6A980082F1BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A365CB762C8A6A980082F1BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A365CB7A2C8A6A990082F1BD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
