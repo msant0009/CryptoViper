@@ -10,8 +10,6 @@ import Foundation
 // class, protocol
 // Entry point to our app
 
-// Target website for crypto data
-// https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json
 
 // common variables and common functions
 
