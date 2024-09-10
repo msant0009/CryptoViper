@@ -20,6 +20,59 @@ protocol AnyView {
     func update(with error : String)
 }
 
+// displays a secondary view controller to look at individual currency/price
+class DetailViewController : UIViewController {
+    
+    var currency : String = ""
+    var price : String = ""
+    
+    private let currencyLabel : UILabel = {
+       let label = UILabel()
+        label.isHidden = false
+        label.text = "Currency Label"
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let priceLabel : UILabel = {
+       let label = UILabel()
+        label.isHidden = false
+        label.text = "Price Label"
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .yellow
+        view.addSubview(currencyLabel)
+        view.addSubview(priceLabel)
+        
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        currencyLabel.frame = CGRect(x: view.frame.width / 2 - 100, y: view.frame.height / 2 - 25, width: 200, height: 50)
+        priceLabel.frame = CGRect(x: view.frame.width / 2 - 100, y: view.frame.height / 2 + 25, width: 200, height: 50)
+ 
+        currencyLabel.text = currency
+        priceLabel.text = price
+        
+        currencyLabel.isHidden = false
+        priceLabel.isHidden = false
+        
+        
+    }
+    
+    
+    
+}
+
 class CryptoViewController : UIViewController, AnyView, UITableViewDelegate, UITableViewDataSource {
     var presenter : AnyPresenter?
     
@@ -69,7 +122,14 @@ class CryptoViewController : UIViewController, AnyView, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        content.text = cryptos[indexPath.row].currency
+        content.secondaryText = cryptos[indexPath.row].price
+        cell.contentConfiguration = content
+        cell.backgroundColor = .yellow
+        
+        return cell
     }
     
     
@@ -84,7 +144,20 @@ class CryptoViewController : UIViewController, AnyView, UITableViewDelegate, UIT
     }
     
     func update(with error : String) {
+        DispatchQueue.main.async {
+            self.cryptos = []
+            self.tableView.isHidden = true
+            self.messageLabel.text = error
+            self.messageLabel.isHidden = false
+        }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextViewController = DetailViewController()
+        nextViewController.currency = cryptos[indexPath.row].currency
+        nextViewController.price = cryptos[indexPath.row].price
+        self.present(nextViewController, animated: true, completion: nil)
     }
     
 }
